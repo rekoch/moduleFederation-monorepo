@@ -1,0 +1,34 @@
+.navigation {
+  display: flex;
+  list-style: none;
+  padding-inline-start: 0;
+  margin-block-start: 0;
+  background-color: cadetblue;
+  padding: 10px;
+  align-items: center;
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
+
+  li {
+    margin-right: 20px;
+  }
+
+  .login {
+    margin-left: auto;
+
+    button {
+      padding: 5px;
+      border-radius: 4px;
+      background-color: white;
+      color: black;
+      border: 2px solid white;
+    }
+  }
+}
+
+.frame {
+  margin: 10px;
+}
