@@ -23,11 +23,6 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-        // For hosts (please adjust)
-      remotes: {
-        'microOne': "microOne@http://localhost:4200/remoteEntry.js",
-        'microTwo': "microTwo@http://localhost:4201/remoteEntry.js"
-      },
 
         shared: share({
           "@angular/core": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
