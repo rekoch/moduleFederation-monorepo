@@ -13,5 +13,10 @@ export const APP_ROUTES: Routes = [
       exposedModule: './Module'
     }).then(module => module.HomeModule)
   },
+  {path: 'microThree', loadChildren: () => loadRemoteModule({
+      remoteName: 'microThree',
+      exposedModule: './Module'
+    }).then(module => module.HomeModule)
+  },
   {path: '**', component: HomeComponent},
 ];

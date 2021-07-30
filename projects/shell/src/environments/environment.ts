@@ -7,6 +7,7 @@ export const environment = {
   microfrontends: {
     microOne: {url: "http://localhost:4200/remoteEntry.js", remoteName: "microOne"},
     microTwo: {url: "http://localhost:4201/remoteEntry.js", remoteName: "microTwo"},
+    microThree: {url: "http://localhost:4202/remoteEntry.js", remoteName: "microThree"},
   }
 };
 
