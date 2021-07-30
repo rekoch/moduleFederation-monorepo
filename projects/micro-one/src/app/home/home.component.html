@@ -1,1 +1,11 @@
-<p>Micro One works</p>
+<h2>This is the Micro One's Home</h2>
+<p>once you clicked the login button, it will show the name out of the centralized auth-lib / auth-service. So it
+  demonstrates, that it can be fetched across all microservices</p>
+
+<div *ngIf="(user$ | async)?.name === ''">
+  <p class="bold">click login to see the logged in user's name</p>
+</div>
+
+<div *ngIf="user$ | async as user">
+  <p class="bold">{{user.name}}</p>
+</div>
