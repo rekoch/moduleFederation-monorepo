@@ -3,6 +3,10 @@
   <li><a routerLink="/microOne">Micro One</a></li>
   <li><a routerLink="/microTwo">Micro Two</a></li>
   <li><a routerLink="/microThree">Micro Three</a></li>
+  <li><a routerLink="/microSplit">Micro Split</a></li>
+  <li><a [routerLink]="['/microSplit', {outlets: {'left': 'microOne', 'right': 'microTwo'}}]"
+         [skipLocationChange]="true">Show Split Directly</a></li>
+
   <li class="login">
     <button (click)="login()">Login</button>
   </li>

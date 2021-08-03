@@ -18,5 +18,6 @@ export const APP_ROUTES: Routes = [
       exposedModule: './Module'
     }).then(module => module.HomeModule)
   },
+  {path: 'microSplit', loadChildren: () => import("./split-view/split-view.module").then(module => module.SplitViewModule)},
   {path: '**', component: HomeComponent},
 ];
