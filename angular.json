@@ -31,7 +31,9 @@
               "projects/shell/src/assets"
             ],
             "styles": [
-              "projects/shell/src/styles.scss"
+              "projects/shell/src/styles.scss",
+              "node_modules/ngx-toastr/toastr.css"
+
             ],
             "scripts": [],
             "extraWebpackConfig": "projects/shell/webpack.config.js",
