@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {AuthenticationService} from "core-lib";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'shell';
+  constructor(private authService: AuthenticationService) {
+  }
+
+  login() {
+    this.authService.login('Yes it\'s your name', 'guggus');
+  }
 }

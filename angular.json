@@ -18,7 +18,7 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "ngx-build-plus:browser",
           "options": {
             "outputPath": "dist/shell",
             "index": "projects/shell/src/index.html",
@@ -31,9 +31,13 @@
               "projects/shell/src/assets"
             ],
             "styles": [
-              "projects/shell/src/styles.scss"
+              "projects/shell/src/styles.scss",
+              "node_modules/ngx-toastr/toastr.css"
+
             ],
-            "scripts": []
+            "scripts": [],
+            "extraWebpackConfig": "projects/shell/webpack.config.js",
+            "commonChunk": false
           },
           "configurations": {
             "production": {
@@ -55,7 +59,8 @@
                   "with": "projects/shell/src/environments/environment.prod.ts"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "extraWebpackConfig": "projects/shell/webpack.prod.config.js"
             },
             "development": {
               "buildOptimizer": false,
@@ -69,25 +74,31 @@
           "defaultConfiguration": "production"
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": "ngx-build-plus:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "shell:build:production"
+              "browserTarget": "shell:build:production",
+              "extraWebpackConfig": "projects/shell/webpack.prod.config.js"
             },
             "development": {
               "browserTarget": "shell:build:development"
             }
           },
-          "defaultConfiguration": "development"
+          "defaultConfiguration": "development",
+          "options": {
+            "extraWebpackConfig": "projects/shell/webpack.config.js",
+            "port": 3000
+          }
         },
         "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "builder": "ngx-build-plus:extract-i18n",
           "options": {
-            "browserTarget": "shell:build"
+            "browserTarget": "shell:build",
+            "extraWebpackConfig": "projects/shell/webpack.config.js"
           }
         },
         "test": {
-          "builder": "@angular-devkit/build-angular:karma",
+          "builder": "ngx-build-plus:karma",
           "options": {
             "main": "projects/shell/src/test.ts",
             "polyfills": "projects/shell/src/polyfills.ts",
@@ -101,7 +112,8 @@
             "styles": [
               "projects/shell/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "extraWebpackConfig": "projects/shell/webpack.config.js"
           }
         }
       }
@@ -121,7 +133,7 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "ngx-build-plus:browser",
           "options": {
             "outputPath": "dist/micro-one",
             "index": "projects/micro-one/src/index.html",
@@ -136,7 +148,9 @@
             "styles": [
               "projects/micro-one/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "extraWebpackConfig": "projects/micro-one/webpack.config.js",
+            "commonChunk": false
           },
           "configurations": {
             "production": {
@@ -158,7 +172,8 @@
                   "with": "projects/micro-one/src/environments/environment.prod.ts"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "extraWebpackConfig": "projects/micro-one/webpack.prod.config.js"
             },
             "development": {
               "buildOptimizer": false,
@@ -172,25 +187,31 @@
           "defaultConfiguration": "production"
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": "ngx-build-plus:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "micro-one:build:production"
+              "browserTarget": "micro-one:build:production",
+              "extraWebpackConfig": "projects/micro-one/webpack.prod.config.js"
             },
             "development": {
               "browserTarget": "micro-one:build:development"
             }
           },
-          "defaultConfiguration": "development"
+          "defaultConfiguration": "development",
+          "options": {
+            "extraWebpackConfig": "projects/micro-one/webpack.config.js",
+            "port": 4200
+          }
         },
         "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "builder": "ngx-build-plus:extract-i18n",
           "options": {
-            "browserTarget": "micro-one:build"
+            "browserTarget": "micro-one:build",
+            "extraWebpackConfig": "projects/micro-one/webpack.config.js"
           }
         },
         "test": {
-          "builder": "@angular-devkit/build-angular:karma",
+          "builder": "ngx-build-plus:karma",
           "options": {
             "main": "projects/micro-one/src/test.ts",
             "polyfills": "projects/micro-one/src/polyfills.ts",
@@ -204,7 +225,8 @@
             "styles": [
               "projects/micro-one/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "extraWebpackConfig": "projects/micro-one/webpack.config.js"
           }
         }
       }
@@ -224,7 +246,7 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "ngx-build-plus:browser",
           "options": {
             "outputPath": "dist/micro-two",
             "index": "projects/micro-two/src/index.html",
@@ -239,7 +261,9 @@
             "styles": [
               "projects/micro-two/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "extraWebpackConfig": "projects/micro-two/webpack.config.js",
+            "commonChunk": false
           },
           "configurations": {
             "production": {
@@ -261,7 +285,8 @@
                   "with": "projects/micro-two/src/environments/environment.prod.ts"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "extraWebpackConfig": "projects/micro-two/webpack.prod.config.js"
             },
             "development": {
               "buildOptimizer": false,
@@ -275,25 +300,31 @@
           "defaultConfiguration": "production"
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": "ngx-build-plus:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "micro-two:build:production"
+              "browserTarget": "micro-two:build:production",
+              "extraWebpackConfig": "projects/micro-two/webpack.prod.config.js"
             },
             "development": {
               "browserTarget": "micro-two:build:development"
             }
           },
-          "defaultConfiguration": "development"
+          "defaultConfiguration": "development",
+          "options": {
+            "extraWebpackConfig": "projects/micro-two/webpack.config.js",
+            "port": 4201
+          }
         },
         "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "builder": "ngx-build-plus:extract-i18n",
           "options": {
-            "browserTarget": "micro-two:build"
+            "browserTarget": "micro-two:build",
+            "extraWebpackConfig": "projects/micro-two/webpack.config.js"
           }
         },
         "test": {
-          "builder": "@angular-devkit/build-angular:karma",
+          "builder": "ngx-build-plus:karma",
           "options": {
             "main": "projects/micro-two/src/test.ts",
             "polyfills": "projects/micro-two/src/polyfills.ts",
@@ -307,7 +338,39 @@
             "styles": [
               "projects/micro-two/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "extraWebpackConfig": "projects/micro-two/webpack.config.js"
+          }
+        }
+      }
+    },
+    "core-lib": {
+      "projectType": "library",
+      "root": "projects/core-lib",
+      "sourceRoot": "projects/core-lib/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/core-lib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/core-lib/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/core-lib/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/core-lib/src/test.ts",
+            "tsConfig": "projects/core-lib/tsconfig.spec.json",
+            "karmaConfig": "projects/core-lib/karma.conf.js"
           }
         }
       }

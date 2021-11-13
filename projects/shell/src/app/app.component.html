@@ -1,10 +1,14 @@
 <ul class="navigation">
   <li><a routerLink="/">Home</a></li>
-  <li><a routerLink="/educator">Educator</a></li>
-  <li><a routerLink="/student">Student</a></li>
-  <li><a routerLink="/plugin">Plugin</a></li>
+  <li><a routerLink="/microOne">Micro One</a></li>
+  <li><a routerLink="/microTwo">Micro Two</a></li>
+  <li><a routerLink="/microThree">Micro Three</a></li>
+  <li><a routerLink="/microSplit">Micro Split</a></li>
+  <li><a [routerLink]="['/microSplit', {outlets: {'left': 'microOne', 'right': 'microTwo'}}]"
+         [skipLocationChange]="true">Show Split Directly</a></li>
+
   <li class="login">
-    <button>Login</button>
+    <button (click)="login()">Login</button>
   </li>
 </ul>
 

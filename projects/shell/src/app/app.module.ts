@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import {RouterModule} from "@angular/router";
 import {APP_ROUTES} from "./app.routes";
 import {HomeComponent} from "./home/home.component";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {ToastrModule} from "ngx-toastr";
 
 @NgModule({
   declarations: [
@@ -14,6 +16,8 @@ import {HomeComponent} from "./home/home.component";
   imports: [
     BrowserModule,
     RouterModule.forRoot(APP_ROUTES),
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
